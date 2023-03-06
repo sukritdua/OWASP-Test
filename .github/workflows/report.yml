@@ -1,0 +1,4 @@
+    - name: GitHub Security Report Action
+      uses: peter-murray/github-security-report-action@v2
+      with:
+        Report_Test: ${{ secrets.Report_Test }}
