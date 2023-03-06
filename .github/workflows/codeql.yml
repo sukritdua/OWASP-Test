@@ -57,8 +57,8 @@ jobs:
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
+   # - name: Autobuild
+    #  uses: github/codeql-action/autobuild@v2
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
@@ -70,13 +70,15 @@ jobs:
     #     echo "Run, Build Application using script"
     #     ./location_of_script_within_repo/buildscript.sh
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:${{matrix.language}}"
+  #  - name: Perform CodeQL Analysis
+   #   uses: github/codeql-action/analyze@v2
+    #  with:
+     #   category: "/language:${{matrix.language}}"
         
     #- name: GitHub Advanced Security API to CSV
      # uses: some-natalie/ghas-to-csv@v2.1.0
     - name: GitHub Security Report Action
       uses: peter-murray/github-security-report-action@v2
+      with:
+        token: ${{ secrets.SECURITY_TOKEN }}
 
