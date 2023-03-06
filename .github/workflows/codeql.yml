@@ -76,3 +76,6 @@ jobs:
         category: "/language:${{matrix.language}}"
     - name: GitHub Advanced Security API to CSV
       uses: some-natalie/ghas-to-csv@v2.1.0
+    - name: GitHub Security Report Action
+      uses: peter-murray/github-security-report-action@v2
+
